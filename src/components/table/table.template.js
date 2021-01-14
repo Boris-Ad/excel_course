@@ -15,10 +15,10 @@ function toCol(el) {
     `;
 }
 
-function createRow(content, info = '') {
+function createRow(content, info) {
     return `
     <div class="row">
-      <div class="row-info">${info}</div>
+      <div class="row-info">${info ? info : ''}</div>
       <div class="row-data">${content}</div>
     </div>
     `;
@@ -33,7 +33,7 @@ export function createTable(rowsCount = 15) {
         .map(toCol)
         .join('');
 
-    rows.push(createRow(cols));
+    rows.push(createRow(cols,null));
 
     for (let i = 0; i < rowsCount; i++) {
         const cells = new Array(colsCount)
