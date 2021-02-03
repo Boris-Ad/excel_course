@@ -58,7 +58,6 @@ function resizeTable(e){
         let target = e.target;
         let parent = target.closest('[data-type="resizable"]');
         let indexCol = target.dataset.col;
-        // let rows = this.$root.$el.querySelectorAll('.row [data-row]');
         let rows = e.currentTarget.querySelectorAll('.row [data-row]');
         let [one, ...row] = rows;
         let width = '';
